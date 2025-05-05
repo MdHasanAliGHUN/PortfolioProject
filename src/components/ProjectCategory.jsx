@@ -8,10 +8,9 @@ const ProjectCategory = () => {
   const [selectedCategory, setSelectedCategory] = useState("All"); // ডিফল্ট All ক্যাটেগরি
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 3); // আরও ৩টা যোগ করবে
+    setVisibleCount((prev) => prev + 3);
   };
 
-  // ক্যাটেগরি অনুযায়ী প্রজেক্ট ফিল্টার করা
   const filteredProjects =
     selectedCategory === "All"
       ? projects

@@ -9,11 +9,11 @@ const Navbar = () => {
 
   const handleLogOutUser = () => {
     logOutUser()
-    .then((result) => {
-      console.log("User LogOut Successfully")
-    })
-    .catch((error) => console.log("Error : ", error.message))
-  }
+      .then((result) => {
+        console.log("User LogOut Successfully");
+      })
+      .catch((error) => console.log("Error : ", error.message));
+  };
   return (
     <header className="bg-white shadow-md fixed w-full z-10 top-0 left-0">
       <nav className="max-w-7xl container mx-auto flex justify-between items-center py-5 px-4">
@@ -30,8 +30,8 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "underline text-indigo-700 transition-all"
-                    : "text-black"
+                    ? "font-semibold border-b-2 py-1 px-2 text-black transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
               >
                 Home
@@ -41,8 +41,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "underline text-indigo-700 transition-all"
-                    : "text-black"
+                    ? "font-semibold border-b-2 py-1 px-2 text-black transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 to="/projects"
               >
@@ -53,8 +53,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "underline text-indigo-700 transition-all"
-                    : "text-black"
+                    ? "font-semibold border-b-2 py-1 px-2 text-black transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 to="/about"
               >
@@ -65,8 +65,8 @@ const Navbar = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "underline text-indigo-700 transition-all"
-                    : "text-black"
+                    ? "font-semibold border-b-2 py-1 px-2 text-black transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 to="/contact"
               >
@@ -93,7 +93,12 @@ const Navbar = () => {
         {/* loging*/}
         <div className=" hidden md:block">
           {user ? (
-            <button onClick={handleLogOutUser} className="bg-indigo-700  hover:bg-indigo-600 px-4 w-32 cursor-pointer  rounded-md out py-2 text-white">Log Out</button>
+            <button
+              onClick={handleLogOutUser}
+              className="bg-indigo-700  hover:bg-indigo-600 px-4 w-32 cursor-pointer  rounded-md out py-2 text-white"
+            >
+              Log Out
+            </button>
           ) : (
             <button className="bg-indigo-700 hover:bg-indigo-600 px-4 w-32 cursor-pointer  rounded-md out py-2 text-white">
               <NavLink to="/login">Login</NavLink>
@@ -106,44 +111,52 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <ul className="flex flex-col space-y-4 py-4 px-6">
-            <li className="hover:border-b-2">
+            <li className="hover:border-b-2 transition-all duration-300 ease-in-out">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "underline text-indigo-700" : "text-black"
+                  isActive
+                    ? "underline text-indigo-700 transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </NavLink>
             </li>
-            <li className="hover:border-b-2">
+            <li className="hover:border-b-2 transition-all duration-300 ease-in-out">
               <NavLink
                 to="/projects"
                 className={({ isActive }) =>
-                  isActive ? "underline text-indigo-700" : "text-black"
+                  isActive
+                    ? "underline text-indigo-700 transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
                 Project
               </NavLink>
             </li>
-            <li className="hover:border-b-2">
+            <li className="hover:border-b-2 transition-all duration-300 ease-in-out">
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? "underline text-indigo-700" : "text-black"
+                  isActive
+                    ? "underline text-indigo-700 transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </NavLink>
             </li>
-            <li className="hover:border-b-2">
+            <li className="hover:border-b-2 transition-all duration-300 ease-in-out">
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? "underline text-indigo-700" : "text-black"
+                  isActive
+                    ? "underline text-indigo-700 transition-all duration-300 ease-in-out"
+                    : "text-black transition-all duration-300 ease-in-out"
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -151,7 +164,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <NavLink to="/login">
-              <button className="w-full bg-indigo-600 text-white py-2 rounded-md">
+              <button className="w-full bg-indigo-600 text-white py-2 rounded-md transition-all duration-300 ease-in-out hover:bg-indigo-700">
                 Login
               </button>
             </NavLink>
